@@ -32,6 +32,11 @@ const theme = createTheme({
       fontFamily: '"Plus Jakarta Sans", sans-serif',
       fontWeight: 500, // Medium for subtitles
     },
+    buttonText: {
+      fontSize: 12,
+      fontWeight: 600,
+      textTransform: "none", // Prevent uppercase transformation
+    },
   },
   palette: {
     primary: {
@@ -47,6 +52,7 @@ const theme = createTheme({
       300: "#85A8F8",
       200: "#AEC8FC",
       100: "#D6E4FD",
+      0: "#FFFFFF",
     },
     secondary: {
       main: "#1A202C",

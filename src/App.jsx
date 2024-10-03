@@ -2,7 +2,10 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./styles/App.css";
-import { Link, SvgIcon, Typography } from "@mui/material";
+import { Button, Link, SvgIcon, Typography } from "@mui/material";
+import PrimaryButton from "./components/Button/PrimaryButton";
+import { DeleteOutline } from "@mui/icons-material";
+import SecondaryButton from "./components/Button/SecondaryButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,6 +41,30 @@ function App() {
         </Link>
         {" in the Material UI documentation."}
       </Typography>
+
+      <PrimaryButton title={"Label"} startIcon={<DeleteOutline />} />
+
+      <PrimaryButton
+        title={"Label"}
+        startIcon={<DeleteOutline />}
+        size="medium"
+      />
+
+      <PrimaryButton
+        title={"Label"}
+        startIcon={<DeleteOutline />}
+        size="large"
+      />
+
+      <div>
+        <SecondaryButton
+          title={"Label"}
+          startIcon={<DeleteOutline />}
+          size="large"
+          onButtonClick={() => console.log("Button clicked")}
+          isDisabled={true}
+        />
+      </div>
     </>
   );
 }
