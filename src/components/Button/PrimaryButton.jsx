@@ -30,7 +30,7 @@ const PrimaryButton = ({
         "&:active": {
           backgroundColor: "primary.dark",
         },
-        "$:focus": {
+        "&:focus": {
           backgroundColor: "primary.main",
         },
         "&.Mui-disabled": {

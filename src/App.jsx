@@ -6,6 +6,7 @@ import { Button, Link, SvgIcon, Typography } from "@mui/material";
 import PrimaryButton from "./components/Button/PrimaryButton";
 import { DeleteOutline } from "@mui/icons-material";
 import SecondaryButton from "./components/Button/SecondaryButton";
+import MinimalButton from "./components/Button/MinimalButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -62,8 +63,12 @@ function App() {
           startIcon={<DeleteOutline />}
           size="large"
           onButtonClick={() => console.log("Button clicked")}
-          isDisabled={true}
+          isDisabled={false}
         />
+      </div>
+
+      <div>
+        <MinimalButton title={"Label"} startIcon={<DeleteOutline />} />
       </div>
     </>
   );
