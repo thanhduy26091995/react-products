@@ -2,23 +2,25 @@ import { memo } from "react";
 import Header from "./Header";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import { Container } from "@mui/material";
+import CommonFooter from "../common/CommonFooter";
+import Dashboard from "./Dashboard";
 
 const HomeCarRent = ({}) => {
   return (
     <Container
-      maxWidth
+      maxWidth={false}
+      disableGutters
       sx={{
-        paddingLeft: {
-          xs: "24px",
-          md: "60px",
-        },
-        paddingRight: {
-          xs: "24px",
-          md: "60px",
-        },
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
       }}
     >
       <Header />
+
+      <Dashboard />
+
+      <CommonFooter />
     </Container>
   );
 };

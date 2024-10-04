@@ -1,43 +1,6 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
-  typography: {
-    fontFamily: '"Plus Jakarta Sans", sans-serif',
-    h1: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 700, // Bold (Semibold)
-    },
-    h2: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 600, // Semibold
-    },
-    h3: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 500, // Medium
-    },
-    body1: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 400, // Regular
-    },
-    button: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 600, // Semibold for buttons
-      textTransform: "none", // Disable automatic uppercase for buttons
-    },
-    caption: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 400, // Regular for captions
-    },
-    subtitle1: {
-      fontFamily: '"Plus Jakarta Sans", sans-serif',
-      fontWeight: 500, // Medium for subtitles
-    },
-    buttonText: {
-      fontSize: 12,
-      fontWeight: 600,
-      textTransform: "none", // Prevent uppercase transformation
-    },
-  },
   palette: {
     primary: {
       main: "#3563E9",
@@ -123,6 +86,44 @@ const theme = createTheme({
       300: "#98D3FF",
       200: "#BAE5FF",
       100: "#DCF3FF",
+    },
+  },
+  typography: {
+    fontFamily: '"Plus Jakarta Sans"',
+    h1: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 700, // Bold (Semibold)
+    },
+    h2: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 600, // Semibold
+    },
+    h3: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 500, // Medium
+    },
+    body1: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 400, // Regular
+    },
+    button: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 600, // Semibold for buttons
+      textTransform: "none", // Disable automatic uppercase for buttons
+    },
+    caption: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 400, // Regular for captions
+    },
+    subtitle1: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 500, // Medium for subtitles
+    },
+    buttonText: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontSize: 12,
+      fontWeight: 600,
+      color: "#1A202C",
     },
   },
 });

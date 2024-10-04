@@ -1,6 +1,7 @@
 #root {
   height: 100%;
   width: 100%;
+  padding-left: 0px;
 }
 
 a {
@@ -47,7 +48,7 @@ button:focus-visible {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #F6F7F9;
   }
   a:hover {
     color: #747bff;
