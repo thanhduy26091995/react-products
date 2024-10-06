@@ -9,6 +9,7 @@ const PrimaryButton = ({
   isDisabled = false,
   startIcon = null,
   endIcon = null,
+  sx = {},
 }) => {
   const theme = useTheme();
 
@@ -22,7 +23,10 @@ const PrimaryButton = ({
       size={size}
       sx={{
         display: "inline-flex",
+        flexWrap: "wrap",
         alignItems: "center",
+        paddingX: "16px",
+        paddingY: "8px",
         ...theme.typography.buttonText,
         "&:hover": {
           backgroundColor: "primary.main",
@@ -38,6 +42,7 @@ const PrimaryButton = ({
           color: "white",
           opacity: 0.4,
         },
+        ...sx,
       }}
     >
       {title}
