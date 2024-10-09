@@ -1,7 +1,10 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import React, { memo } from "react";
-import Car1 from "../../assets/iv_car_1.png";
+import Car2 from "../../assets/iv_car_2.png";
+import Swap from "../../assets/ic_swap.svg";
 import PrimaryButton from "../../components/Button/PrimaryButton";
+import FilterComponent from "./FilterComponent";
+import { Image } from "@mui/icons-material";
 
 const Dashboard = ({}) => {
   return (
@@ -12,6 +15,7 @@ const Dashboard = ({}) => {
         overflowY: "auto",
         backgroundColor: "#F6F7F9",
         paddingX: "32px",
+        marginTop: "24px",
       }}
     >
       <Stack direction="column">
@@ -26,7 +30,44 @@ const Dashboard = ({}) => {
               overflow: "hidden",
             }}
           >
-            <CircleBackgroundList />
+            <BannerDetailCard
+              title={
+                <>
+                  {" "}
+                  The Best Platform
+                  <br />
+                  for Car Rental
+                </>
+              }
+              subTitle={
+                <>
+                  {" "}
+                  Ease of doing a car rental safely and<br></br>reliably. Of
+                  course at a low price.
+                </>
+              }
+              button={
+                <PrimaryButton
+                  sx={{ color: "primary.100", marginTop: "16px" }}
+                  title={"Rental Car"}
+                  size="medium"
+                  onButtonClick={() => console.log("Button clicked")}
+                />
+              }
+              car1={
+                <img
+                  src={Car2}
+                  style={{
+                    width: "420px",
+                    aspectRatio: "340/106",
+                    position: "absolute",
+                    bottom: 10,
+                    left: "30%",
+                  }}
+                />
+              }
+              background={<BackgroundCar1 />}
+            />
           </Container>
 
           <Container
@@ -35,52 +76,120 @@ const Dashboard = ({}) => {
               aspectRatio: "640/320",
               backgroundColor: "primary.500",
               borderRadius: "10px",
+              position: "relative",
+              overflow: "hidden",
             }}
-          ></Container>
+          >
+            <BannerDetailCard
+              title={
+                <>
+                  {" "}
+                  Easy way to rent a
+                  <br />
+                  car at a low price
+                </>
+              }
+              subTitle={
+                <>
+                  {" "}
+                  Providing cheap car rental services<br></br>and safe and
+                  comfortable facilities.
+                </>
+              }
+              button={
+                <PrimaryButton
+                  sx={{
+                    color: "primary.0",
+                    marginTop: "16px",
+                    backgroundColor: "info.500",
+                  }}
+                  title={"Rental Car"}
+                  size="medium"
+                  onButtonClick={() => console.log("Button clicked")}
+                />
+              }
+              car1={
+                <img
+                  src={Car2}
+                  style={{
+                    width: "420px",
+                    aspectRatio: "340/106",
+                    position: "absolute",
+                    bottom: 10,
+                    left: "30%",
+                  }}
+                />
+              }
+              background={<BackgroundCar1 />}
+            />
+          </Container>
+        </Stack>
+
+        <Stack
+          direction="row"
+          spacing="44px"
+          sx={{ alignItems: "center", marginTop: "32px" }}
+        >
+          <FilterComponent />
+
+          <Container
+            sx={{
+              width: "60px",
+              height: "60px",
+              backgroundColor: "primary.500",
+              borderRadius: "10px",
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <img
+              src={Swap}
+              style={{
+                width: "24px",
+                height: "24px",
+              }}
+            />
+          </Container>
+          <FilterComponent />
         </Stack>
       </Stack>
     </Container>
   );
 };
 
-const CaroSquare = ({}) => {
-  const squareSize = 4;
-  const gridSize = 1000;
-  console.log(gridSize);
-  const squares = Array.from({ length: gridSize * gridSize }, (_, index) => {
-    return (
-      <div
-        key={index}
-        style={{
-          width: "8px",
-          height: "8px",
-          backgroundColor: "transparent",
-          borderColor: "red",
-          borderWidth: "1px",
-          borderStyle: "solid",
-        }}
-      />
-    );
-  });
+const BackgroundCar1 = ({}) => {
+  const circles = Array(9).fill(0);
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${gridSize}, 8px)`, // Create grid with equal-sized columns of 4px width
-        gridTemplateRows: `repeat(${gridSize}, 8px)`, // Create grid with equal-sized rows
-        width: "100%", // Full width of parent container
-        height: "100%", // Full height of parent container
-      }}
-    >
-      {squares}
-    </div>
+    <>
+      {circles.map((_, index) => {
+        const size = index == 0 ? 50 : 100 * (index + 1);
+        const offset = -(size / 2);
+        const borderStrokeSize = index == 0 ? 25 : 25;
+
+        return (
+          <div
+            key={index}
+            style={{
+              position: "absolute",
+              width: `${size}px`,
+              height: `${size}px`,
+              border: `${borderStrokeSize}px solid rgba(255, 255, 255, 0.06)`, // Stroke with color
+              borderRadius: "50%", // Makes it a circle
+              margin: "50px", // Space between circles
+              top: "70%",
+              left: "30%",
+              transform: `translate(${offset}px, ${offset}px)`,
+            }}
+          />
+        );
+      })}
+    </>
   );
 };
 
-const CircleBackgroundList = ({}) => {
-  const circles = Array(9).fill(0);
-
+const BannerDetailCard = ({ title, subTitle, button, car1, background }) => {
   return (
     <div
       style={{
@@ -105,9 +214,7 @@ const CircleBackgroundList = ({}) => {
             color: "primary.0",
           }}
         >
-          The Best Platform
-          <br />
-          for Car Rental
+          {title}
         </Typography>
 
         <Typography
@@ -118,51 +225,15 @@ const CircleBackgroundList = ({}) => {
             marginTop: "16px",
           }}
         >
-          The Best Platform
-          <br />
-          for Car Rental
+          {subTitle}
         </Typography>
 
-        <PrimaryButton
-          sx={{ color: "primary.100", marginTop: "16px" }}
-          title={"Rental Car"}
-          onButtonClick={() => console.log("Button clicked")}
-        />
+        {button}
       </Box>
 
-      <img
-        src={Car1}
-        style={{
-          width: "406px",
-          height: "106px",
-          position: "absolute",
-          bottom: 10,
-          left: "30%",
-        }}
-      />
+      {car1}
 
-      {circles.map((_, index) => {
-        const size = index == 0 ? 50 : 100 * (index + 1);
-        const offset = -(size / 2);
-        const borderStrokeSize = index == 0 ? 25 : 25;
-
-        return (
-          <div
-            key={index}
-            style={{
-              position: "absolute",
-              width: `${size}px`,
-              height: `${size}px`,
-              border: `${borderStrokeSize}px solid rgba(255, 255, 255, 0.06)`, // Stroke with color
-              borderRadius: "50%", // Makes it a circle
-              margin: "50px", // Space between circles
-              top: "70%",
-              left: "30%",
-              transform: `translate(${offset}px, ${offset}px)`,
-            }}
-          />
-        );
-      })}
+      {background}
     </div>
   );
 };
