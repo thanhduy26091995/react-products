@@ -102,15 +102,27 @@ const CommonFooter = ({}) => {
         </Grid2>
 
         <Grid2 size={1.5} sx={{}}>
-          <FooterSection title={"About"} links={aboutSections} />
+          <FooterSection
+            fieldKey={"about"}
+            title={"About"}
+            links={aboutSections}
+          />
         </Grid2>
 
         <Grid2 size={1.5}>
-          <FooterSection title={"Community"} links={communitySections} />
+          <FooterSection
+            fieldKey={"community"}
+            title={"Community"}
+            links={communitySections}
+          />
         </Grid2>
 
         <Grid2 size={1.5}>
-          <FooterSection title={"Socials"} links={socialsSections} />
+          <FooterSection
+            fieldKey={"socials"}
+            title={"Socials"}
+            links={socialsSections}
+          />
         </Grid2>
       </Grid2>
 
@@ -153,9 +165,9 @@ const CommonFooter = ({}) => {
   );
 };
 
-function FooterSection({ title, links }) {
+function FooterSection({ fieldKey, title, links }) {
   return (
-    <Stack direction="column" sx={{}}>
+    <Stack key={fieldKey} direction="column" sx={{}}>
       <Typography
         variant="h2"
         sx={{

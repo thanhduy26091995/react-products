@@ -4,12 +4,30 @@ import Car2 from "../../assets/iv_car_2.png";
 import Swap from "../../assets/ic_swap.svg";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import FilterComponent from "./FilterComponent";
-import { Image } from "@mui/icons-material";
+import { Filter, Image } from "@mui/icons-material";
 
 const Dashboard = ({}) => {
+  const filterComponents = [
+    {
+      key: "locations",
+      title: "Locations",
+      subTitle: "Select your city",
+    },
+    {
+      key: "date",
+      title: "Date",
+      subTitle: "Select your date",
+    },
+    {
+      key: "time",
+      title: "Time",
+      subTitle: "Select your time",
+    },
+  ];
+
   return (
     <Container
-      maxWidth
+      maxWidth={false}
       sx={{
         flex: 1,
         overflowY: "auto",
@@ -130,7 +148,14 @@ const Dashboard = ({}) => {
           spacing="44px"
           sx={{ alignItems: "center", marginTop: "32px" }}
         >
-          <FilterComponent />
+          <FilterComponent
+            filterKey={"pick-up"}
+            radioTitle={"Pick-Up"}
+            filterComponents={filterComponents}
+            onFilterComponentClick={(key) => {
+              console.log(key);
+            }}
+          />
 
           <Container
             sx={{
@@ -151,7 +176,15 @@ const Dashboard = ({}) => {
               }}
             />
           </Container>
-          <FilterComponent />
+
+          <FilterComponent
+            filt={"drop-off"}
+            radioTitle={"Drop-Off"}
+            filterComponents={filterComponents}
+            onFilterComponentClick={(key) => {
+              console.log(key);
+            }}
+          />
         </Stack>
       </Stack>
     </Container>
