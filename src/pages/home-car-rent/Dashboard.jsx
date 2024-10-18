@@ -4,7 +4,7 @@ import Car2 from "../../assets/iv_car_2.png";
 import Swap from "../../assets/ic_swap.svg";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import FilterComponent from "./FilterComponent";
-import { Filter, Image } from "@mui/icons-material";
+import PopularCarComponent from "./PopularCarComponent";
 
 const Dashboard = ({}) => {
   const filterComponents = [
@@ -27,16 +27,18 @@ const Dashboard = ({}) => {
 
   return (
     <Container
-      maxWidth={false}
+      maxWidth={true}
       sx={{
         flex: 1,
         overflowY: "auto",
         backgroundColor: "#F6F7F9",
-        paddingX: "32px",
         marginTop: "24px",
+        marginLeft: "32px",
+        marginRight: "32px",
+        maxWidth: "calc(100vw - 64px)",
       }}
     >
-      <Stack direction="column">
+      <Stack direction="column" sx={{}}>
         <Stack direction="row" spacing="32px">
           <Container
             sx={{
@@ -186,6 +188,8 @@ const Dashboard = ({}) => {
             }}
           />
         </Stack>
+
+        <PopularCarComponent />
       </Stack>
     </Container>
   );

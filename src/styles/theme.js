@@ -106,6 +106,11 @@ const theme = createTheme({
       fontFamily: '"Plus Jakarta Sans"',
       fontWeight: 400, // Regular
     },
+    body2: {
+      fontFamily: '"Plus Jakarta Sans"',
+      fontWeight: 500, // Regular
+      fontSize: 14
+    },
     button: {
       fontFamily: '"Plus Jakarta Sans"',
       fontWeight: 600, // Semibold for buttons
